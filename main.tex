@@ -2,6 +2,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{fullpage}
 \usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
 
 \title{Feynman's Technique for Computing Integrals}
 \author{Tyler Lin}
@@ -59,8 +61,8 @@ $$= \int_{0}^{\pi}\frac{2(1+\alpha^2)du}{(1-\alpha)^2+(1+\alpha)^2u^2} = \frac{2
 Note that $\frac{1+\alpha}{1-\alpha}$ ranges from 0 to $-\infty$ because $|\alpha|<1$. Therefore if we denote the constant $\beta$ to be $$\beta=\frac{1+\alpha}{1-\alpha}u \text{ and } d\beta=\frac{1+\alpha}{1-\alpha}du \text { (so } du=\frac{1-\alpha}{1+\alpha}d\beta \text{)}$$,
 $$\frac{2(1+\alpha^2)}{(1-\alpha)^2}\int_{0}^{\pi}\frac{du}{1+(\frac{1+\alpha}{1-\alpha})^2u^2} = \frac{2(1+\alpha^2)}{(1-\alpha)(1+\alpha)}\int_{0}^{-\infty}\frac{d\beta}{1+\beta^2}$$
 This looks familiar!
-$$= \frac{2(1+\alpha^2}{1-\alpha^2}\arctan{\beta}\bigg\vert_{0}^{-\infty}$$
-$$= \frac{2(1+\alpha^2}{1-\alpha^2}(\frac{-\pi}{2}) = \frac{-\pi(1+\alpha^2)}{1-\alpha^2}.$$
+$$= \frac{2(1+\alpha^2)}{1-\alpha^2}\arctan{\beta}\bigg\vert_{0}^{-\infty}$$
+$$= \frac{2(1+\alpha^2)}{1-\alpha^2}(\frac{-\pi}{2}) = \frac{-\pi(1+\alpha^2)}{1-\alpha^2}.$$
 We finally have solved for our differential equation with respect to alpha.
 $$\frac{\partial f}{\partial \alpha} = \frac{2\pi}{\alpha}$$
 We can now solve for $f(\alpha)$ by integrating.
@@ -86,15 +88,22 @@ $$\int_{0}^{1}\frac{x^2-1}{\log{x}}dx = f(2) = \boxed{\log({3})}.$$
 
 \section*{Exercises for the Reader}
 The solution to these integrals are much shorter than the first example, do don't hesitate to try them.
-\newline \newline 1. Use Feynman's technique to solve the following integral, question $A5$ from the 2005 Putnam Competition:
+\newline \newline 1. \textit{Use Feynman's technique to evaluate the following integral, $A5$ from the 2005 Putnam Competition}:
 $$\int_{0}^{1}\frac{\ln(x+1)}{x^2+1}dx$$
-2. Use Feynman's technique to evaluate
+2. \textit{Use Feynman's technique to evaluate}
 $$\int_{0}^{\pi}e^{\cos{x}}\cos{(\sin{x})}dx.$$
 The answers can be found on the next page. Happy integrating!
+\newline
+\begin{center}
+    \includegraphics[scale=0.5]{feynman}
+\end{center}
+
 \newpage
 \section*{Answers to Exercises}
-1. $$\frac{\pi\ln{2}}{8}$$
-2. $$0$$
+1. $\boxed{\dfrac{\pi\ln{2}}{8}}$
+\newline \textit{Hint}: Let $\displaystyle{f(k)=\int_{0}^{1}\frac{\ln({kx-1})}{x^2+1}}dx$
+\newline \newline 2. $\boxed{0}$
+\newline \textit{Hint}: Let $\displaystyle{f(k)=\int_{0}^{\pi}e^{k\cos{x}}\cos({k\sin{x}})}dx$
 \begin{thebibliography}{2}
 \bibitem{book}
 Feynman, Richard P.
@@ -103,6 +112,6 @@ Bantam Books, 1986.
 
 \bibitem{medium}
 The Red, Panda. "Richard Feynman's Integral Trick." 
-\textit{Medium}, 16 July 2018, medium.com/cantors-paradise/richard-feynmans-integral-trick-e7afae85e25c. Accessed 17 Jan. 2020.
+\textit{Medium}, 16 July 2018, medium.com/cantors-paradise/richard-feynmans-integral-trick-e7afae85e25c. Accessed 18 Jan. 2020.
 \end{thebibliography}
 \end{document}
